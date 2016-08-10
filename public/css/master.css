@@ -1,0 +1,44 @@
+.badge{
+    margin-bottom: 5px;
+}
+
+.margin {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.FormAddLike{
+    display:inline;
+}
+
+.btn-win {
+    background-color: #89f90f;
+    color: #000000;
+}
+
+.none_d {
+    display: none;
+}
+
+.btn.btn-xs {
+    vertical-align: text-bottom;
+}
+
+.btn-primary.selected {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+.clear {
+   float: right;
+}
+
+.wellbox{
+        box-shadow: 6px 4px 24px #1995dc;
+}
+
+.marg30 {
+        padding-right: 30px;
+    padding-left: 30px;
+}    

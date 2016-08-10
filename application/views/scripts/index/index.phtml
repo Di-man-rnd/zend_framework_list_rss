@@ -1,0 +1,38 @@
+<div class="alert alert-dismissible alert-info margin">
+    <strong>Лента новостей!</strong> Сортировать:  
+    <a href="#" id="menu" class="btn btn-primary btn-xs sort_source">по ресурсу</a> 
+    <a href="#" id="menu" class="btn btn-primary btn-xs sort_date selected">по дате</a> 
+    <a href="<?php echo $this->url(array('controller' => 'delete', 'action' => 'index'), null, true); ?>" class="btn btn-primary btn-xs clear">Сброс счетчика</a> 
+</div>
+    <?php if($this->notDb){?>
+    <div class="alert alert-warning" style="    margin: 19px 10px;">Предупреждение: База не обнаружена, функционал будет ограничен.</div>
+    <?php }?>
+
+<div class="grid">
+<?php foreach($this->list as $item){?>
+
+    <div class="grid-item panel panel-primary margin">
+        <span class="none_d name"><?=$item['RESOURS']?></span>  
+        <span class="none_d number"><?=$item['DATE']?></span>  
+        <div class="panel-heading" >
+            <h3 class="panel-title">
+                <span class="badge"><?=$item['RESOURS']?></span>  
+                <span class="badge"><?=$item['DISPLAY_DATE']?></span>  
+                <form action="/index/add/" method="post" class="FormAddLike">
+                    <input type="hidden" name="name" value="<?=$item['TITLE']?>" />
+                    <input type="hidden" name="count" value="<?=$item['COUNT']?>" />
+                    <button type="submit" class="btn-<?=$item['COUNT']==10 ? 'win' : 'info' ?> btn btn-xs ">
+                        <span class="glyphicon glyphicon-thumbs-up" ></span> 
+                        <b><?=$item['COUNT']>=10 ? 'самая популярная!' : $item['COUNT'] ?></b>
+                    </button>
+                </form>
+                <a href='<?=$item['LINK']?>' target="_blank"><?=$item['TITLE']?></a>                
+            </h3>
+        </div>
+        <div class="panel-body">
+            <?=$item['DESC']?>
+        </div>
+    </div>
+
+ <?php }?>
+</div>

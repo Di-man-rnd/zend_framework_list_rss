@@ -37,4 +37,5 @@
   /application/models/CRUD.php
   /library/Class/Logger.php - (не закончен, для обработки исключений)
   
+  /example_code/ - пару файлов с кодом
 главный action  - /application/controllers/IndexController.php
